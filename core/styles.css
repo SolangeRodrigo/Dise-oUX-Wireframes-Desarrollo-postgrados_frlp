@@ -746,7 +746,18 @@ input:focus, select:focus { border-color: var(--accent-mid); box-shadow: 0 0 0 3
   padding: 12px 20px; border-top: 1px solid var(--border);
   flex-shrink: 0;
 }
-
+/*logo utn*/
+.sidebar-watermark {
+  padding: 0 20px 8px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.sidebar-watermark img {
+  width: 100%;
+  max-width: 120px;
+  display: block;
+  margin: 0 auto;
+}
 /* UTN Branding stripe */
 .utn-stripe {
   height: 3px;
