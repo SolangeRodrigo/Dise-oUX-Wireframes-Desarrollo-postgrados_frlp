@@ -72,9 +72,9 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); font
 /* ===== MARCA DE AGUA (UTN WATERMARK) ===== */
 .sidebar-watermark {
   padding: 20px 20px 0px;
-  opacity: 0.12;
+  opacity: 0.50s;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.s ease;
 }
 
 .sidebar-watermark img {
