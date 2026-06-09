@@ -260,70 +260,124 @@ body.dark .logo-dark {
   --qa-bg: var(--surface);
   --qa-border: var(--border);
   --qa-hover: var(--surface);
+  --qa-accent: var(--accent);
   background: linear-gradient(180deg, var(--qa-bg), var(--qa-hover));
   border: 1px solid var(--qa-border);
   border-radius: var(--radius-lg);
-  padding: 16px 18px;
+  padding: 16px 16px 16px 18px;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s, background 0.15s;
-  display: flex; align-items: flex-start; gap: 14px;
-  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  display: flex; align-items: center; gap: 14px;
+  min-height: 88px;
+  box-shadow: 0 8px 20px rgba(15, 22, 35, 0.04), var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
 }
 .qa-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-light), var(--shadow-sm);
-  transform: translateY(-1px);
+  border-color: var(--qa-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--qa-accent) 14%, transparent), 0 12px 24px rgba(15, 22, 35, 0.08), var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.qa-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, transparent 60%, color-mix(in srgb, var(--qa-accent) 10%, transparent) 100%);
+  pointer-events: none;
+}
+
+.qa-card::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--qa-accent) 78%, white);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--qa-accent) 10%, transparent);
+  pointer-events: none;
 }
 
 .qa-card-blue {
   --qa-bg: #E8F1FF;
   --qa-border: #AFC8FF;
   --qa-hover: #DCE9FF;
+  --qa-accent: #2E6EE6;
 }
 
 .qa-card-red {
   --qa-bg: #FBE7EA;
   --qa-border: #E89DAB;
   --qa-hover: #F8D8DF;
+  --qa-accent: #CC314D;
 }
 
 .qa-card-green {
   --qa-bg: #E6F7EA;
   --qa-border: #A9D9B8;
   --qa-hover: #D5F0DD;
+  --qa-accent: #2E9A5B;
 }
 
 body.dark .qa-card-blue {
   --qa-bg: #132846;
   --qa-border: #4870B3;
   --qa-hover: #173055;
+  --qa-accent: #6EA0FF;
 }
 
 body.dark .qa-card-red {
   --qa-bg: #35111B;
   --qa-border: #8A384D;
   --qa-hover: #431520;
+  --qa-accent: #FF6D86;
 }
 
 body.dark .qa-card-green {
   --qa-bg: #10261A;
   --qa-border: #3B7551;
   --qa-hover: #143224;
+  --qa-accent: #59D68A;
 }
 
 .qa-icon {
-  width: 38px; height: 38px;
-  border-radius: 8px;
+  width: 42px; height: 42px;
+  border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   font-size: 18px; flex-shrink: 0;
 }
-.qa-icon.blue { background: var(--accent-light); color: var(--accent); }
-.qa-icon.red { background: var(--utn-red-light); color: var(--utn-red); }
-.qa-icon.green { background: var(--green-light); color: var(--green); }
+.qa-icon.blue { background: color-mix(in srgb, var(--qa-accent) 16%, white); color: var(--qa-accent); }
+.qa-icon.red { background: color-mix(in srgb, var(--qa-accent) 16%, white); color: var(--qa-accent); }
+.qa-icon.green { background: color-mix(in srgb, var(--qa-accent) 16%, white); color: var(--qa-accent); }
 
-.qa-info { min-width: 0; }
-.qa-title { font-size: 13px; font-weight: 500; color: var(--text); }
-.qa-desc { font-size: 11px; color: var(--text-3); margin-top: 2px; line-height: 1.4; }
+body.dark .qa-icon.blue,
+body.dark .qa-icon.red,
+body.dark .qa-icon.green {
+  background: #0C1424;
+  color: var(--qa-accent);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.qa-info { min-width: 0; flex: 1; }
+.qa-title { font-size: 14px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+.qa-desc { font-size: 11px; color: var(--text-2); margin-top: 3px; line-height: 1.4; }
+
+.qa-action {
+  align-self: center;
+  margin-left: auto;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--qa-accent) 12%, var(--surface));
+  color: var(--qa-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid color-mix(in srgb, var(--qa-accent) 22%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.28);
+  z-index: 1;
+}
 
 /* ===== MAIN GRID (tabla + notifs) ===== */
 .main-grid {
