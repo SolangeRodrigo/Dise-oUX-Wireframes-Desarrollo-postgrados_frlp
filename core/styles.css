@@ -176,6 +176,26 @@ body.dark .logo-dark {
 }
 .theme-toggle-btn:hover { background: rgba(255,255,255,0.14); color: white; }
 
+.logout-btn {
+  display: flex; align-items: center; gap: 7px;
+  margin-top: 6px;
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.72);
+  font-size: 12px;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+
 /* ===== MAIN ===== */
 .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
 
