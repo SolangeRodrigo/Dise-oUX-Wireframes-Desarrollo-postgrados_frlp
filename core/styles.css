@@ -193,6 +193,14 @@ body.dark .logo-dark {
 
 .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 
+.topbar-welcome {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
 /* Notif button in topbar */
 .notif-btn {
   position: relative;
@@ -249,12 +257,15 @@ body.dark .logo-dark {
 }
 
 .qa-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  --qa-bg: var(--surface);
+  --qa-border: var(--border);
+  --qa-hover: var(--surface);
+  background: linear-gradient(180deg, var(--qa-bg), var(--qa-hover));
+  border: 1px solid var(--qa-border);
   border-radius: var(--radius-lg);
   padding: 16px 18px;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s, background 0.15s;
   display: flex; align-items: flex-start; gap: 14px;
   box-shadow: var(--shadow-sm);
 }
@@ -262,6 +273,42 @@ body.dark .logo-dark {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-light), var(--shadow-sm);
   transform: translateY(-1px);
+}
+
+.qa-card-blue {
+  --qa-bg: #E8F1FF;
+  --qa-border: #AFC8FF;
+  --qa-hover: #DCE9FF;
+}
+
+.qa-card-red {
+  --qa-bg: #FBE7EA;
+  --qa-border: #E89DAB;
+  --qa-hover: #F8D8DF;
+}
+
+.qa-card-green {
+  --qa-bg: #E6F7EA;
+  --qa-border: #A9D9B8;
+  --qa-hover: #D5F0DD;
+}
+
+body.dark .qa-card-blue {
+  --qa-bg: #132846;
+  --qa-border: #4870B3;
+  --qa-hover: #173055;
+}
+
+body.dark .qa-card-red {
+  --qa-bg: #35111B;
+  --qa-border: #8A384D;
+  --qa-hover: #431520;
+}
+
+body.dark .qa-card-green {
+  --qa-bg: #10261A;
+  --qa-border: #3B7551;
+  --qa-hover: #143224;
 }
 
 .qa-icon {
