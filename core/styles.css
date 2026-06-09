@@ -16,6 +16,10 @@
   --accent-mid: #2361C9;
   --accent-hover: #002D7A;
 
+  /* Sidebar / logo blue */
+  --sidebar-bg: #013aa6;
+  --sidebar-bg-dark: #011034;
+
   /* UTN rojo */
   --utn-red: #C8102E;
   --utn-red-light: #FDE8EB;
@@ -71,32 +75,45 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); font
 /* ===== SIDEBAR ===== */
 .sidebar {
   width: 228px; flex-shrink: 0;
-  background: var(--accent);
+  background: var(--sidebar-bg);
   display: flex; flex-direction: column;
   overflow-y: auto;
 }
 
-body.dark .sidebar { background: #0D1A3A; }
+body.dark .sidebar { background: var(--sidebar-bg-dark); }
 
 .sidebar-logo {
-  padding: 18px 20px 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-  display: flex; align-items: center; gap: 10px;
-}
-
-.logo-badge {
-  width: 36px; height: 36px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 8px;
+  padding: 12px 12px 10px;
   display: flex; align-items: center; justify-content: center;
-  color: white; font-family: var(--mono); font-size: 11px;
-  font-weight: 500; letter-spacing: -0.3px; flex-shrink: 0;
 }
 
-.logo-info { min-width: 0; }
-.logo-name { font-size: 13px; font-weight: 500; color: white; letter-spacing: 0.02em; }
-.logo-sub { font-size: 10px; color: rgba(255,255,255,0.55); margin-top: 1px; }
+.logo-mark {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  width: 176px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+body.dark .logo-light {
+  display: none;
+}
+
+body.dark .logo-dark {
+  display: block;
+}
 
 .sidebar-section { padding: 16px 0 8px; }
 .sidebar-label {
