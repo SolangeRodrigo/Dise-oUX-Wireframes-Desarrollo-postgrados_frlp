@@ -53,7 +53,7 @@
           🔔
           <span class="notif-dot" id="notifDot"></span>
         </button>
-        <button class="btn primary" onclick="openModal()">+ Nueva inscripción</button>
+        <div class="topbar-welcome">¡Bienvenido, Usuario!</div>
       </div>
     </div>
 
@@ -88,26 +88,29 @@
       <div>
         <div class="section-label">Accesos rápidos</div>
         <div class="quickaccess-grid">
-          <div class="qa-card" onclick="openModal()">
+          <div class="qa-card qa-card-blue" onclick="openModal()">
             <div class="qa-icon blue">📝</div>
             <div class="qa-info">
               <div class="qa-title">Inscribir alumno</div>
               <div class="qa-desc">Crear nueva inscripción e iniciar workflow</div>
             </div>
+            <div class="qa-action">Abrir</div>
           </div>
-          <div class="qa-card" onclick="showToast('Módulo de docentes — próximamente en MOD-B')">
+          <div class="qa-card qa-card-red" onclick="showToast('Módulo de docentes — próximamente en MOD-B')">
             <div class="qa-icon red">👨‍🏫</div>
             <div class="qa-info">
               <div class="qa-title">Docente</div>
               <div class="qa-desc">Docente </modulo-b></div>
             </div>
+            <div class="qa-action">Abrir</div>
           </div>
-          <div class="qa-card" onclick="switchTabByName('tab-inscripcion')">
+          <div class="qa-card qa-card-green" onclick="switchTabByName('tab-inscripcion')">
             <div class="qa-icon green">📋</div>
             <div class="qa-info">
               <div class="qa-title">Lista de alumnos</div>
               <div class="qa-desc">Ver y filtrar todos los inscriptos</div>
             </div>
+            <div class="qa-action">Abrir</div>
           </div>
         </div>
       </div>
